@@ -1,6 +1,6 @@
 <template>
-  <VCard variant="elevated" class="rounded-lg mb-2">
-    <VCardTitle class="pa-2 text-body-1">Title</VCardTitle>
+  <VCard variant="elevated" class="rounded-lg mb-2 elevation-3">
+    <VCardTitle :class="bgColor" class="pa-2 text-body-2 text">Title</VCardTitle>
     <VCardText class="pa-2 bg-white"
       >Lorem ipsum dolor sit amet consectetur adipisicing elit.</VCardText
     >
@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const title = ref('')
+defineProps<{
+  bgColor: string
+}>()
 </script>
