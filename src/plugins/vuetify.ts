@@ -18,6 +18,7 @@ const customTheme: ThemeDefinition = {
     'primary-darken-1': '#1F5592',
     secondary: '#48A9A6',
     'secondary-darken-1': '#018786',
+    accent: '#381010',
     pastelYellow: '#FFECBE',
     pastelGreen: '#9CE899',
     pastelBlue: '#78C1E6',

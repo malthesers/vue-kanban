@@ -1,7 +1,7 @@
 <template>
-  <VMain>
-    <VContainer class="mt-4">
-      <VRow class="ga-4">
+  <VMain class="d-flex h-screen">
+    <VContainer class="mt-4 grow">
+      <VRow class="h-100 ga-4">
         <StatusContainer title="To do" bgColor="bg-pastelGreen" />
         <StatusContainer title="In progress" bgColor="bg-pastelYellow" />
         <StatusContainer title="Blocked" bgColor="bg-pastelRed" />

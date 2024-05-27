@@ -1,7 +1,9 @@
 <template>
-  <VCard variant="elevated">
-    <VCardTitle>Title</VCardTitle>
-    <VCardText>Lorem ipsum dolor sit amet consectetur adipisicing elit.</VCardText>
+  <VCard variant="elevated" class="rounded-lg mb-2">
+    <VCardTitle class="pa-2 text-body-1">Title</VCardTitle>
+    <VCardText class="pa-2 bg-white"
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit.</VCardText
+    >
   </VCard>
 </template>
 
