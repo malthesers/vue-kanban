@@ -1,11 +1,13 @@
 <template>
   <header></header>
 
-  <main>
-    <h1></h1>
-  </main>
+  <main></main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+onMounted(() => {
+  console.log('mounted')
+})
+</script>
 
 <style scoped></style>
