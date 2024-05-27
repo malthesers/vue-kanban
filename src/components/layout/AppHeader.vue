@@ -1,6 +1,6 @@
 <template>
   <VAppBar :elevation="2">
-    <VAppBarTitle>Kanban</VAppBarTitle>
+    <VAppBarTitle class="font-weight-bold">Kanban</VAppBarTitle>
   </VAppBar>
 </template>
 
