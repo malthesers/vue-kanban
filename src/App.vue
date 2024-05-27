@@ -1,7 +1,9 @@
 <template>
   <header></header>
 
-  <main></main>
+  <main>
+    <KanbanCard />
+  </main>
 </template>
 
 <script setup lang="ts">
