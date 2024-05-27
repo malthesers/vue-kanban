@@ -1,4 +1,5 @@
 import 'vuetify/styles'
+import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify, type ThemeDefinition } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
@@ -7,9 +8,9 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 const customTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    background: '#ffecbe',
-    surface: '#FFFFFF',
-    'surface-bright': '#FFFFFF',
+    background: '#FFF9F3',
+    surface: '#FFF9F3',
+    'surface-bright': '#FFF9F3',
     'surface-light': '#EEEEEE',
     'surface-variant': '#424242',
     'on-surface-variant': '#EEEEEE',
@@ -17,10 +18,10 @@ const customTheme: ThemeDefinition = {
     'primary-darken-1': '#1F5592',
     secondary: '#48A9A6',
     'secondary-darken-1': '#018786',
-    error: '#B00020',
-    info: '#2196F3',
-    success: '#4CAF50',
-    warning: '#FB8C00'
+    pastelYellow: '#FFECBE',
+    pastelGreen: '#9CE899',
+    pastelBlue: '#78C1E6',
+    pastelRed: '#F2B8B4'
   },
   variables: {
     'border-color': '#000000',

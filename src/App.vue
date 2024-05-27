@@ -1,7 +1,7 @@
 <template>
   <VLayout>
     <AppHeader />
-    <VMain> <KanbanCard /></VMain>
+    <KanbanBoard />
   </VLayout>
 </template>
 

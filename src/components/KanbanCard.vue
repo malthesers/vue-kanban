@@ -1,5 +1,5 @@
 <template>
-  <VCard variant="tonal">
+  <VCard variant="elevated">
     <VCardTitle>Title</VCardTitle>
     <VCardText>Lorem ipsum dolor sit amet consectetur adipisicing elit.</VCardText>
   </VCard>
