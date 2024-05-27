@@ -1,8 +1,8 @@
 <template>
-  <article>
-    <p>Title</p>
-    <p>Description</p>
-  </article>
+  <VCard variant="tonal">
+    <VCardTitle>Title</VCardTitle>
+    <VCardText>Lorem ipsum dolor sit amet consectetur adipisicing elit.</VCardText>
+  </VCard>
 </template>
 
 <script setup lang="ts">

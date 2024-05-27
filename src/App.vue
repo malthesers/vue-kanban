@@ -1,9 +1,8 @@
 <template>
-  <header></header>
-
-  <main>
-    <KanbanCard />
-  </main>
+  <VLayout>
+    <AppHeader />
+    <VMain> <KanbanCard /></VMain>
+  </VLayout>
 </template>
 
 <script setup lang="ts">
