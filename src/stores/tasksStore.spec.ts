@@ -1,7 +1,7 @@
 import { setActivePinia, createPinia } from 'pinia'
-import { useTasksStore, type ITasksStore } from './tasksStore'
+import { useTasksStore } from './tasksStore'
 import { beforeEach, describe, it, expect } from 'vitest'
-import type { ITask } from '@/types'
+import type { ITask, ITasksStore } from '@/types'
 
 const newTask: ITask = {
   id: 0,

@@ -5,12 +5,17 @@
         <VSheet v-bind="props">
           <TaskCardTitle
             @toggleEditing="toggleEditing"
+            @disableEditing="() => toggleEditing(false)"
             :isEditing="isEditing"
             :isHovering="isHovering"
             :task="task"
             :bgColor="bgColor"
           />
-          <TaskCardDescription :isEditing="isEditing" :task="task" />
+          <TaskCardDescription
+            @disableEditing="() => toggleEditing(false)"
+            :isEditing="isEditing"
+            :task="task"
+          />
         </VSheet>
       </template>
     </VHover>
@@ -29,7 +34,6 @@ defineProps<{
 const isEditing = ref<boolean>(false)
 
 function toggleEditing(value?: boolean) {
-  console.log('yo')
   isEditing.value = value !== undefined ? value : !isEditing.value
 }
 </script>

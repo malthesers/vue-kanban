@@ -1,19 +1,7 @@
 import defaultTasks from '@/data/defaultTasks'
-import type { IStatusContainer, ITask } from '@/types'
+import type { IStatusContainer, ITask, ITaskUpdates } from '@/types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-
-export interface ITasksStore {
-  statusContainers: IStatusContainer[]
-  addTask: (containerIndex: number, task: ITask) => void
-  updateTask: (taskId: number, updates: ITaskUpdates) => void
-  removeTask: (taskId: number) => void
-}
-
-interface ITaskUpdates {
-  title?: string
-  description?: string
-}
 
 export const useTasksStore = defineStore('tasksStore', () => {
   const statusContainers = ref<IStatusContainer[]>(defaultTasks)

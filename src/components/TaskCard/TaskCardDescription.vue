@@ -1,7 +1,7 @@
 <template>
   <VSheet class="pa-2 bg-white rounded-b-lg">
     <VCardText
-      @blur="(e) => tasksStore.updateTask(task.id, { description: e.target.innerText })"
+      @blur="(e) => updateTaskAndDisableEditing(task.id, { description: e.target.innerText })"
       class="pa-0"
       :contenteditable="isEditing"
       >{{ taskDescription }}
@@ -12,8 +12,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
-import type { ITask } from '@/types'
+import type { ITask, ITaskUpdates } from '@/types'
 
+const emits = defineEmits(['disableEditing'])
 const props = defineProps<{
   isEditing: boolean
   task: ITask
@@ -21,6 +22,11 @@ const props = defineProps<{
 
 const tasksStore = useTasksStore()
 const taskDescription = ref<string>(props.task.description)
+
+function updateTaskAndDisableEditing(taskId: number, updatedTask: ITaskUpdates) {
+  tasksStore.updateTask(taskId, updatedTask)
+  emits('disableEditing')
+}
 </script>
 
 <style scoped>
