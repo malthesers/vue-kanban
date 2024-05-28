@@ -1,3 +1,5 @@
+/* ----- Google Font classes ----- */
+
 .oxygen-light {
   font-family: 'Oxygen', sans-serif;
   font-weight: 300;
@@ -16,6 +18,8 @@
   font-style: normal;
 }
 
+/* ----- Additional utility classes ----- */
+
 .h-fit {
   height: fit-content;
 }
@@ -26,6 +30,18 @@
 
 .max-w-none {
   max-width: none !important;
+}
+
+/* ----- Editable content styling ----- */
+
+[contenteditable] {
+  transition-duration: 200ms;
+  outline: 1px dashed transparent;
+}
+
+[contenteditable='true'] {
+  outline: 1px dashed black;
+  border-radius: 2px;
 }
 
 /* ----- Vue Draggable classes ----- */

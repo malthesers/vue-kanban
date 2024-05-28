@@ -1,6 +1,6 @@
 <template>
   <VMain class="d-flex h-screen">
-    <VContainer class="mt-4 grow overflow-x-scroll">
+    <VContainer class="mt-4 grow overflow-x-auto">
       <VRow class="h-100 pa-4 ga-4 flex-nowrap flex-sm-row">
         <StatusContainer
           v-for="(container, index) in tasksStore.statusContainers"

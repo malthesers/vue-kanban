@@ -11,7 +11,7 @@
       @end="toggleGrabbingCursor"
     >
       <template #item="{ element }">
-        <KanbanCard :bgColor="bgColor" :task="element" />
+        <TaskCard :bgColor="bgColor" :task="element" />
       </template>
     </draggable>
     <StatusContainerAddButton />
