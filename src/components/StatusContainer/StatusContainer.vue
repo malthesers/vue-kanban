@@ -1,8 +1,11 @@
 <template>
   <VCol class="max-h-100 h-fit pa-0 rounded-lg d-flex flex-column overflow-hidden elevation-3">
-    <StatusContainerTitle :title="tasksStore.statusContainers[index].title" :bgColor="bgColor" />
+    <StatusContainerTitle
+      :title="tasksStore.statusContainers[containerIndex].title"
+      :bgColor="bgColor"
+    />
     <draggable
-      v-model="tasksStore.statusContainers[index].tasks"
+      v-model="tasksStore.statusContainers[containerIndex].tasks"
       group="tasks"
       item-key="title"
       class="bg-primary px-2 py-4 overflow-y-auto overflow-x-hidden"
@@ -14,7 +17,7 @@
         <TaskCard :bgColor="bgColor" :task="element" />
       </template>
     </draggable>
-    <StatusContainerAddButton />
+    <StatusContainerAddButton :containerIndex="containerIndex" />
   </VCol>
 </template>
 
@@ -23,7 +26,7 @@ import { useTasksStore } from '@/stores/tasksStore'
 import draggable from 'vuedraggable'
 
 defineProps<{
-  index: number
+  containerIndex: number
   bgColor: string
 }>()
 

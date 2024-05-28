@@ -5,7 +5,7 @@
         <StatusContainer
           v-for="(container, index) in tasksStore.statusContainers"
           :key="container.title"
-          :index="index"
+          :containerIndex="index"
           :bgColor="container.color"
         /> </VRow
     ></VContainer>
