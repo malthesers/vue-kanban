@@ -1,15 +1,10 @@
 <template>
-  <VContainer class="bg-primary pt-0">
+  <VContainer class="bg-primary pa-2">
     <VBtn
       @click="
-        () =>
-          tasksStore.addTask(containerIndex, {
-            id: Date.now(),
-            title: '',
-            description: ''
-          })
+        () => tasksStore.addTask(containerIndex, { id: Date.now(), title: '', description: '' })
       "
-      variant="elevated"
+      variant="tonal"
       prepend-icon="mdi-plus"
       class="text-accent font-weight-bold text-none"
     >

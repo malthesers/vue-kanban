@@ -21,3 +21,9 @@ defineProps<{
   task: ITask
 }>()
 </script>
+
+<style scoped>
+.v-card-text {
+  min-height: 1.5rem;
+}
+</style>
