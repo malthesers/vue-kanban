@@ -5,10 +5,6 @@
   </VLayout>
 </template>
 
-<script setup lang="ts">
-onMounted(() => {
-  console.log('mounted')
-})
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

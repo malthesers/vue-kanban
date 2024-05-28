@@ -1,5 +1,5 @@
 import defaultTasks from '@/data/defaultTasks'
-import type { IStatusContainer } from '@/types'
+import type { IStatusContainer, ITask } from '@/types'
 import { defineStore } from 'pinia'
 
 interface ITaskUpdates {
@@ -12,8 +12,8 @@ export const useTasksStore = defineStore('tasks', () => {
 
   function updateTask(id: number, updates: ITaskUpdates) {
     statusContainers.value
-      .flatMap((container) => container.tasks)
-      .forEach((task) => {
+      .flatMap((container: IStatusContainer) => container.tasks)
+      .forEach((task: ITask) => {
         if (task.id === id) {
           Object.assign(task, updates)
         }
