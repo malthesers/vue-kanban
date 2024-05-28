@@ -16,6 +16,10 @@
   font-style: normal;
 }
 
+.duration-200 {
+  transition-duration: 1000ms;
+}
+
 .h-fit {
   height: fit-content;
 }
