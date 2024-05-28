@@ -16,6 +16,14 @@ export const useTasksStore = defineStore('tasks', () => {
         {
           title: 'Do this',
           description: 'Complete doing this one particular thing that is to be done.'
+        },
+        {
+          title: 'Do that',
+          description: 'Complete doing that one particular thing that is to be done.'
+        },
+        {
+          title: 'Didgeridoo',
+          description: 'Complete doing the didgeridoo thing that is to be done.'
         }
       ]
     },

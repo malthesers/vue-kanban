@@ -13,3 +13,5 @@ defineProps<{
   task: ITask
 }>()
 </script>
+
+<style></style>

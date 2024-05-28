@@ -7,15 +7,15 @@
       v-model="tasksStore.tasksContainers[status].tasks"
       group="tasks"
       item-key="title"
-      class="bg-primary pa-2 overflow-auto"
+      class="bg-primary px-2 py-4 overflow-y-auto overflow-x-hidden"
+      :animation="200"
+      @start="toggleGrabbingCursor"
+      @end="toggleGrabbingCursor"
     >
       <template #item="{ element }">
         <KanbanCard :bgColor="bgColor" :task="element" />
       </template>
     </draggable>
-    <!-- <VList class="bg-primary px-2 overflow-auto">
-      <KanbanCard v-for="task in tasks" :bgColor="bgColor" :key="task.title" :task="task" />
-    </VList> -->
     <VContainer class="bg-primary pt-0">
       <VBtn
         variant="elevated"
@@ -30,14 +30,16 @@
 
 <script setup lang="ts">
 import { useTasksStore } from '@/stores/tasksStore'
-import type { ITask } from '@/types'
 import draggable from 'vuedraggable'
-
-const tasksStore = useTasksStore()
 
 defineProps<{
   status: 'toDo' | 'inProgress' | 'blocked' | 'done'
-  // tasks: ITask[]
   bgColor: string
 }>()
+
+const tasksStore = useTasksStore()
+
+function toggleGrabbingCursor() {
+  document.querySelector('html')?.classList.toggle('grabbing')
+}
 </script>

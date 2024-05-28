@@ -16,14 +16,28 @@
   font-style: normal;
 }
 
-.duration-200 {
-  transition-duration: 1000ms;
-}
-
 .h-fit {
   height: fit-content;
 }
 
 .max-h-100 {
   max-height: 100%;
+}
+
+/* ----- Vue Draggable classes ----- */
+
+[data-draggable='true'] {
+  cursor: grab !important;
+  transition-duration: 200ms;
+}
+.grabbing,
+.sortable-chosen,
+.sortable-ghost {
+  cursor: -webkit-grabbing !important;
+  cursor: -moz-grabbing !important;
+  cursor: grabbing !important;
+}
+
+.sortable-ghost {
+  filter: brightness(0.8);
 }
