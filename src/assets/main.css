@@ -24,6 +24,10 @@
   max-height: 100%;
 }
 
+.max-w-none {
+  max-width: none !important;
+}
+
 /* ----- Vue Draggable classes ----- */
 
 [data-draggable='true'] {

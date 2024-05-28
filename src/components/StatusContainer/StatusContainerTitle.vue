@@ -1,5 +1,5 @@
 <template>
-  <p :class="bgColor" class="px-4 py-2 font-weight-bold">
+  <p :style="{ backgroundColor: bgColor }" class="px-4 py-2 font-weight-bold">
     {{ title }}
   </p>
 </template>

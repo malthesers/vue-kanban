@@ -5,5 +5,6 @@ export interface ITask {
 
 export interface IStatusContainer {
   title: string
+  color: string
   tasks: ITask[]
 }

@@ -1,17 +1,11 @@
 import type { IStatusContainer } from '@/types'
 import { defineStore } from 'pinia'
 
-interface ITasksContainers {
-  toDo: IStatusContainer
-  inProgress: IStatusContainer
-  blocked: IStatusContainer
-  done: IStatusContainer
-}
-
 export const useTasksStore = defineStore('tasks', () => {
-  const tasksContainers = ref<ITasksContainers>({
-    toDo: {
+  const statusContainers = ref<IStatusContainer[]>([
+    {
       title: 'To do',
+      color: '#9CE899',
       tasks: [
         {
           title: 'Do this',
@@ -27,19 +21,22 @@ export const useTasksStore = defineStore('tasks', () => {
         }
       ]
     },
-    inProgress: {
+    {
       title: 'In progress',
+      color: '#FFECBE',
       tasks: []
     },
-    blocked: {
+    {
       title: 'Blocked',
+      color: '#F2B8B4',
       tasks: []
     },
-    done: {
+    {
       title: 'Done',
+      color: '#78C1E6',
       tasks: []
     }
-  })
+  ])
 
-  return { tasksContainers }
+  return { statusContainers }
 })
