@@ -1,8 +1,6 @@
 <template>
   <VCol class="max-h-100 h-fit pa-0 rounded-lg d-flex flex-column overflow-hidden elevation-3">
-    <p :class="bgColor" class="px-4 py-2 font-weight-bold">
-      {{ tasksStore.tasksContainers[status].title }}
-    </p>
+    <StatusContainerTitle :title="tasksStore.tasksContainers[status].title" :bgColor="bgColor" />
     <draggable
       v-model="tasksStore.tasksContainers[status].tasks"
       group="tasks"
@@ -16,15 +14,7 @@
         <KanbanCard :bgColor="bgColor" :task="element" />
       </template>
     </draggable>
-    <VContainer class="bg-primary pt-0">
-      <VBtn
-        variant="elevated"
-        prepend-icon="mdi-plus"
-        class="text-accent font-weight-bold text-none"
-      >
-        Add a card
-      </VBtn>
-    </VContainer>
+    <StatusContainerAddButton />
   </VCol>
 </template>
 
