@@ -10,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask } from '@/types'
 
