@@ -1,13 +1,37 @@
+import type { IStatusContainer } from '@/types'
 import { defineStore } from 'pinia'
-import type { ITask } from '@/types'
+
+interface ITasksContainers {
+  toDo: IStatusContainer
+  inProgress: IStatusContainer
+  blocked: IStatusContainer
+  done: IStatusContainer
+}
 
 export const useTasksStore = defineStore('tasks', () => {
-  const tasks = ref<ITask[]>([
-    {
-      title: 'Do this',
-      description: 'Complete doing this one particular thing that is to be done'
+  const tasksContainers = ref<ITasksContainers>({
+    toDo: {
+      title: 'To do',
+      tasks: [
+        {
+          title: 'Do this',
+          description: 'Complete doing this one particular thing that is to be done.'
+        }
+      ]
+    },
+    inProgress: {
+      title: 'In progress',
+      tasks: []
+    },
+    blocked: {
+      title: 'Blocked',
+      tasks: []
+    },
+    done: {
+      title: 'Done',
+      tasks: []
     }
-  ])
+  })
 
-  return { tasks }
+  return { tasksContainers }
 })
