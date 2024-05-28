@@ -4,6 +4,7 @@
       <VRow class="h-100 pa-4 ga-4 flex-nowrap flex-sm-row">
         <StatusContainer
           v-for="(container, index) in tasksStore.statusContainers"
+          :key="container.title"
           :index="index"
           :bgColor="container.color"
         /> </VRow

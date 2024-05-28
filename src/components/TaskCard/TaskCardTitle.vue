@@ -14,7 +14,7 @@
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask } from '@/types'
 
-const props = defineProps<{
+defineProps<{
   toggleIsEditing: () => void
   isEditing: boolean
   isHovering: boolean | null
@@ -23,5 +23,4 @@ const props = defineProps<{
 }>()
 
 const tasksStore = useTasksStore()
-const taskCardTitleRef = ref<HTMLDivElement | null>(null)
 </script>
