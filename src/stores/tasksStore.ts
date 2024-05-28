@@ -6,7 +6,8 @@ import { ref } from 'vue'
 export interface ITasksStore {
   statusContainers: IStatusContainer[]
   addTask: (containerIndex: number, task: ITask) => void
-  updateTask: (id: number, updates: ITaskUpdates) => void
+  updateTask: (taskId: number, updates: ITaskUpdates) => void
+  removeTask: (taskId: number) => void
 }
 
 interface ITaskUpdates {
@@ -31,5 +32,15 @@ export const useTasksStore = defineStore('tasksStore', () => {
       })
   }
 
-  return { statusContainers, addTask, updateTask }
+  function removeTask(taskId: number) {
+    statusContainers.value.forEach((container) => {
+      const taskToRemove = container.tasks.find((task: ITask) => task.id === taskId)
+
+      if (taskToRemove) {
+        container.tasks = container.tasks.filter((task) => task.id !== taskId)
+      }
+    })
+  }
+
+  return { statusContainers, addTask, updateTask, removeTask }
 })

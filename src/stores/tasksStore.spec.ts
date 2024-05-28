@@ -3,6 +3,12 @@ import { useTasksStore, type ITasksStore } from './tasksStore'
 import { beforeEach, describe, it, expect } from 'vitest'
 import type { ITask } from '@/types'
 
+const newTask: ITask = {
+  id: 0,
+  title: 'Implement thing',
+  description: 'Use the given technology to implement the thing'
+}
+
 describe('tasksStore', () => {
   let tasksStore: ITasksStore
 
@@ -33,33 +39,44 @@ describe('tasksStore', () => {
 
   it('succesfully adds new task', () => {
     const containerIndex = 0
-    const newTask: ITask = {
-      id: 0,
-      title: 'Implement thing',
-      description: 'Use the given technology to implement the thing'
-    }
+
+    expect(tasksStore.statusContainers[containerIndex].tasks).not.toContainEqual(newTask)
 
     tasksStore.addTask(containerIndex, newTask)
 
     expect(tasksStore.statusContainers[containerIndex].tasks).toContainEqual(newTask)
   })
 
+  it('succesfully removes task', () => {
+    const containerIndex = 0
+
+    tasksStore.addTask(containerIndex, newTask)
+
+    expect(tasksStore.statusContainers[containerIndex].tasks).toContainEqual(newTask)
+
+    tasksStore.removeTask(newTask.id)
+
+    expect(tasksStore.statusContainers[containerIndex].tasks).not.toContainEqual(newTask)
+  })
+
   it('succesfully updates task titles', () => {
+    const taskId = 1
     const newTitle = 'Implement thing'
 
     expect(tasksStore.statusContainers[0].tasks[0].title).not.toBe(newTitle)
 
-    tasksStore.updateTask(1, { title: newTitle })
+    tasksStore.updateTask(taskId, { title: newTitle })
 
     expect(tasksStore.statusContainers[0].tasks[0].title).toBe(newTitle)
   })
 
   it('succesfully updates task descriptions', () => {
+    const taskId = 1
     const newDescription = 'Use the given technology to implement the thing'
 
     expect(tasksStore.statusContainers[0].tasks[0].description).not.toBe(newDescription)
 
-    tasksStore.updateTask(1, { description: newDescription })
+    tasksStore.updateTask(taskId, { description: newDescription })
 
     expect(tasksStore.statusContainers[0].tasks[0].description).toBe(newDescription)
   })
