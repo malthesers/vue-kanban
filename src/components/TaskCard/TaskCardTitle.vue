@@ -6,7 +6,7 @@
       :contenteditable="isEditing"
       >{{ taskTitle }}
     </VCardText>
-    <TaskCardEditButton :toggleEditability="toggleIsEditing" :isHovering="isHovering" />
+    <TaskCardEditButton @toggleEditing="emits('toggleEditing')" :isHovering="isHovering" />
     <TaskCardDeleteButton :taskId="task.id" :isHovering="isHovering" />
   </VSheet>
 </template>
@@ -16,8 +16,8 @@ import { ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask } from '@/types'
 
+const emits = defineEmits(['toggleEditing'])
 const props = defineProps<{
-  toggleIsEditing: () => void
   isEditing: boolean
   isHovering: boolean | null
   task: ITask

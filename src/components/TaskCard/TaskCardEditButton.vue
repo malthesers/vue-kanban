@@ -1,6 +1,6 @@
 <template>
   <VBtn
-    @click="toggleEditability"
+    @click="emits('toggleEditing')"
     variant="tonal"
     height="20"
     width="20"
@@ -14,7 +14,8 @@
 
 <script setup lang="ts">
 defineProps<{
-  toggleEditability: () => void
   isHovering: boolean | null
 }>()
+
+const emits = defineEmits(['toggleEditing'])
 </script>

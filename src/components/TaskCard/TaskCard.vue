@@ -4,7 +4,7 @@
       <template v-slot:default="{ isHovering, props }">
         <VSheet v-bind="props">
           <TaskCardTitle
-            :toggleIsEditing="() => (isEditing = !isEditing)"
+            @toggleEditing="toggleEditing"
             :isEditing="isEditing"
             :isHovering="isHovering"
             :task="task"
@@ -27,6 +27,11 @@ defineProps<{
 }>()
 
 const isEditing = ref<boolean>(false)
+
+function toggleEditing(value?: boolean) {
+  console.log('yo')
+  isEditing.value = value !== undefined ? value : !isEditing.value
+}
 </script>
 
 <style scoped>
