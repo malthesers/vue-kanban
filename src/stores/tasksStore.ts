@@ -1,6 +1,7 @@
 import defaultTasks from '@/data/defaultTasks'
 import type { IStatusContainer, ITask } from '@/types'
 import { defineStore } from 'pinia'
+import { ref } from 'vue'
 
 interface ITaskUpdates {
   title?: string

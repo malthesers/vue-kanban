@@ -12,11 +12,7 @@ export default defineConfig({
     vue(),
     Components({}),
     AutoImport({
-      imports: [
-        {
-          vue: ['ref', 'computed', 'onMounted']
-        }
-      ],
+      imports: ['vue'],
       dts: './auto-imports.d.ts',
       vueTemplate: true
     })
