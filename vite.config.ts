@@ -11,7 +11,15 @@ export default defineConfig({
   plugins: [
     vue(),
     Components({}),
-    AutoImport({ imports: ['vue'], dts: './auto-imports.d.ts', vueTemplate: true })
+    AutoImport({
+      imports: [
+        {
+          vue: ['ref', 'computed', 'onMounted']
+        }
+      ],
+      dts: './auto-imports.d.ts',
+      vueTemplate: true
+    })
   ],
   resolve: {
     alias: {
