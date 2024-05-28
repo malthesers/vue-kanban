@@ -28,3 +28,9 @@ defineProps<{
 
 const isEditing = ref<boolean>(false)
 </script>
+
+<style scoped>
+.v-card:last-of-type {
+  margin-bottom: 0 !important;
+}
+</style>
