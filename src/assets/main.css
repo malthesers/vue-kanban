@@ -44,13 +44,25 @@
   border-radius: 2px;
 }
 
+/* ----- Scrollbar styling ----- */
+
+html,
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0;
+}
+
 /* ----- Vue Draggable classes ----- */
 
 [data-draggable='true'] {
   cursor: grab !important;
   transition-duration: 200ms;
 }
-.grabbing,
+
 .sortable-chosen,
 .sortable-ghost {
   cursor: -webkit-grabbing !important;

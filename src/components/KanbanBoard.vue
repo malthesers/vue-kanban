@@ -7,7 +7,8 @@
           :key="container.title"
           :containerIndex="index"
           :bgColor="container.color"
-        /> </VRow
+        />
+        <StatusContainerCreator /> </VRow
     ></VContainer>
   </VMain>
 </template>
