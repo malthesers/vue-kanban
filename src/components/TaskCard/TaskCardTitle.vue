@@ -4,8 +4,8 @@
       @blur="(e) => tasksStore.updateTask(task.id, { title: e.target.innerText })"
       class="flex-grow-1 pa-0 text-body-2 font-weight-bold text-wrap"
       :contenteditable="isEditing"
-      >{{ task.title }}</VCardTitle
-    >
+      >{{ taskTitle }}
+    </VCardTitle>
     <TaskCardEditButton :toggleEditability="toggleIsEditing" :isHovering="isHovering" />
     <TaskCardDeleteButton :taskId="task.id" :isHovering="isHovering" />
   </VSheet>
@@ -15,7 +15,7 @@
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask } from '@/types'
 
-defineProps<{
+const props = defineProps<{
   toggleIsEditing: () => void
   isEditing: boolean
   isHovering: boolean | null
@@ -24,6 +24,7 @@ defineProps<{
 }>()
 
 const tasksStore = useTasksStore()
+const taskTitle = ref<string>(props.task.title)
 </script>
 
 <style scoped>

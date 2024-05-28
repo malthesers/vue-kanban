@@ -4,8 +4,7 @@
       @blur="(e) => tasksStore.updateTask(task.id, { description: e.target.innerText })"
       class="pa-0"
       :contenteditable="isEditing"
-    >
-      {{ task.description }}
+      >{{ taskDescription }}
     </VCardText>
   </VSheet>
 </template>
@@ -14,12 +13,13 @@
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask } from '@/types'
 
-const tasksStore = useTasksStore()
-
-defineProps<{
+const props = defineProps<{
   isEditing: boolean
   task: ITask
 }>()
+
+const tasksStore = useTasksStore()
+const taskDescription = ref<string>(props.task.description)
 </script>
 
 <style scoped>
