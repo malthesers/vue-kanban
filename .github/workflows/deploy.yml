@@ -1,12 +1,12 @@
-name: Build Vue
+name: Deploy App
 on: [push]
 jobs:
-  build_vue:
+  deploy_app:
     runs-on: ubuntu-latest
-    name: Build Vue
+    name: Deploy App
     steps:
       - uses: actions/checkout@v2
-      - id: Build-Vue
+      - id: Deploy-App
         uses: xRealNeon/VuePagesAction@1.0.1
         with:
           username: 'malthesers'
