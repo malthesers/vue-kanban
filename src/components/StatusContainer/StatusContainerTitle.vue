@@ -26,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Ref, ComputedRef } from 'vue'
 import type { IStatusContainer } from '@/types'
 import fontColorContrast from 'font-color-contrast'
 

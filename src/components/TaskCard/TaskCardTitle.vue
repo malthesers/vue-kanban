@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import fontColorContrast from 'font-color-contrast'
-import { ref } from 'vue'
+import { ref, computed, type Ref, type ComputedRef } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask } from '@/types'
 
