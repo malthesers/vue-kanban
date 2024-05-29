@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue'
+import { ref, type Ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
 import type { IStatusContainer } from '@/types'
 
