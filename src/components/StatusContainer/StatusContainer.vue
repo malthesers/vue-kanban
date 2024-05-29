@@ -32,7 +32,7 @@ const tasksStore = useTasksStore()
 
 <style scoped>
 .v-col {
-  min-width: 17.5rem;
-  max-width: 17.5rem;
+  min-width: 15rem;
+  max-width: 15rem;
 }
 </style>

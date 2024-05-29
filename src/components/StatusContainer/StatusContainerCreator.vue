@@ -1,18 +1,22 @@
 <template>
-  <VCol class="max-h-100 h-fit pa-0 rounded-lg d-flex flex-column overflow-hidden elevation-3">
-    <VBtn
-      variant="tonal"
-      prepend-icon="mdi-plus"
-      class="bg-accent px-4 py-2 font-weight-bold text-none"
-      >Add new status list</VBtn
-    >
-  </VCol>
+  <VBtn
+    @click="tasksStore.addStatusContainer(newStatusContainer)"
+    variant="tonal"
+    prepend-icon="mdi-plus"
+    class="pa-0 rounded-lg bg-accent px-4 py-2 font-weight-bold text-none"
+    >New status list</VBtn
+  >
 </template>
 
 <script setup lang="ts">
-// import { useTasksStore } from '@/stores/tasksStore'
+import { useTasksStore } from '@/stores/tasksStore'
 
-// const tasksStore = useTasksStore()
+const tasksStore = useTasksStore()
+const newStatusContainer = {
+  title: 'Title',
+  color: '#381010',
+  tasks: []
+}
 </script>
 
 <style scoped>

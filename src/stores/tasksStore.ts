@@ -30,5 +30,9 @@ export const useTasksStore = defineStore('tasksStore', () => {
     })
   }
 
-  return { statusContainers, addTask, updateTask, removeTask }
+  function addStatusContainer(statusContainer: IStatusContainer) {
+    statusContainers.value.push(statusContainer)
+  }
+
+  return { statusContainers, addTask, updateTask, removeTask, addStatusContainer }
 })

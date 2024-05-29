@@ -17,7 +17,6 @@
           />
         </template>
       </draggable>
-      <!-- <StatusContainerCreator />  -->
     </VContainer>
   </VMain>
 </template>

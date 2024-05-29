@@ -1,6 +1,7 @@
 <template>
-  <VAppBar :elevation="2">
+  <VAppBar :elevation="3" class="py-2 px-4">
     <VAppBarTitle class="font-weight-bold">Kanban Board</VAppBarTitle>
+    <StatusContainerCreator />
   </VAppBar>
 </template>
 
