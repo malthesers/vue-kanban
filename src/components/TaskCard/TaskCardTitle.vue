@@ -1,6 +1,7 @@
 <template>
   <VSheet :style="{ backgroundColor: bgColor, color: textColor }" class="pa-2 d-flex ga-1">
     <VCardText
+      @dblclick="emits('enableEditing')"
       @blur="(e) => updateTaskAndDisableEditing(task.id, { title: e.target.innerText })"
       class="pa-0 text-body-2 font-weight-bold"
       :style="{ outlineColor: textColor }"
@@ -18,7 +19,7 @@ import { ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask, ITaskUpdates } from '@/types'
 
-const emits = defineEmits(['toggleEditing', 'disableEditing'])
+const emits = defineEmits(['toggleEditing', 'enableEditing', 'disableEditing'])
 const props = defineProps<{
   isEditing: boolean
   isHovering: boolean | null

@@ -5,6 +5,7 @@
         <VSheet v-bind="props">
           <TaskCardTitle
             @toggleEditing="toggleEditing"
+            @enableEditing="() => toggleEditing(true)"
             @disableEditing="() => toggleEditing(false)"
             :isEditing="isEditing"
             :isHovering="isHovering"
@@ -12,6 +13,7 @@
             :bgColor="bgColor"
           />
           <TaskCardDescription
+            @enableEditing="() => toggleEditing(true)"
             @disableEditing="() => toggleEditing(false)"
             :isEditing="isEditing"
             :task="task"

@@ -1,6 +1,7 @@
 <template>
   <VSheet class="pa-2 bg-white rounded-b-lg">
     <VCardText
+      @dblclick="emits('enableEditing')"
       @blur="(e) => updateTaskAndDisableEditing(task.id, { description: e.target.innerText })"
       class="pa-0"
       :contenteditable="isEditing"
@@ -14,7 +15,7 @@ import { ref } from 'vue'
 import { useTasksStore } from '@/stores/tasksStore'
 import type { ITask, ITaskUpdates } from '@/types'
 
-const emits = defineEmits(['disableEditing'])
+const emits = defineEmits(['enableEditing', 'disableEditing'])
 const props = defineProps<{
   isEditing: boolean
   task: ITask
