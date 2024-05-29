@@ -2,6 +2,7 @@ import type { IStatusContainer } from '@/types'
 
 const dummyTasks: IStatusContainer[] = [
   {
+    id: 1,
     title: 'To do',
     color: '#9CE899',
     tasks: [
@@ -23,16 +24,19 @@ const dummyTasks: IStatusContainer[] = [
     ]
   },
   {
+    id: 2,
     title: 'In progress',
     color: '#FFECBE',
     tasks: []
   },
   {
+    id: 3,
     title: 'Blocked',
     color: '#F2B8B4',
     tasks: []
   },
   {
+    id: 4,
     title: 'Done',
     color: '#78C1E6',
     tasks: []

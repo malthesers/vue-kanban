@@ -1,6 +1,6 @@
 <template>
   <VCol class="max-h-100 h-fit pa-0 rounded-lg d-flex flex-column overflow-hidden elevation-3">
-    <StatusContainerTitle :title="statusContainer.title" :bgColor="bgColor" />
+    <StatusContainerTitle :statusContainer="statusContainer" :bgColor="bgColor" />
     <draggable
       :list="statusContainer.tasks"
       group="tasks"

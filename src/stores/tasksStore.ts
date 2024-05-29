@@ -1,5 +1,5 @@
 import defaultTasks from '@/data/defaultTasks'
-import type { IStatusContainer, ITask, ITaskUpdates } from '@/types'
+import type { IStatusContainer, IStatusContainerUpdates, ITask, ITaskUpdates } from '@/types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
@@ -34,5 +34,20 @@ export const useTasksStore = defineStore('tasksStore', () => {
     statusContainers.value.push(statusContainer)
   }
 
-  return { statusContainers, addTask, updateTask, removeTask, addStatusContainer }
+  function updateStatusContainer(statusContainerId: number, updates: IStatusContainerUpdates) {
+    statusContainers.value.forEach((container: IStatusContainer) => {
+      if (container.id === statusContainerId) {
+        Object.assign(container, updates)
+      }
+    })
+  }
+
+  return {
+    statusContainers,
+    addTask,
+    updateTask,
+    removeTask,
+    addStatusContainer,
+    updateStatusContainer
+  }
 })

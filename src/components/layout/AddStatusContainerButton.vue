@@ -1,6 +1,13 @@
 <template>
   <VBtn
-    @click="tasksStore.addStatusContainer(newStatusContainer)"
+    @click="
+      tasksStore.addStatusContainer({
+        id: Date.now(),
+        title: 'Title',
+        color: '#381010',
+        tasks: []
+      })
+    "
     variant="tonal"
     prepend-icon="mdi-plus"
     class="pa-0 rounded-lg bg-accent px-4 py-2 font-weight-bold text-none"
@@ -12,11 +19,6 @@
 import { useTasksStore } from '@/stores/tasksStore'
 
 const tasksStore = useTasksStore()
-const newStatusContainer = {
-  title: 'Title',
-  color: '#381010',
-  tasks: []
-}
 </script>
 
 <style scoped>

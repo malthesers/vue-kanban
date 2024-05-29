@@ -1,10 +1,10 @@
 <template>
-  <VSheet :style="{ backgroundColor: bgColor, color: textColor }" class="pa-2 d-flex ga-1">
+  <VSheet :style="{ backgroundColor: bgColor, color: contrastColor }" class="pa-2 d-flex ga-1">
     <VCardText
       @dblclick="emits('enableEditing')"
       @blur="(e) => tasksStore.updateTask(task.id, { title: e.target.innerText })"
       class="pa-0 text-body-2 font-weight-bold"
-      :style="{ outlineColor: textColor }"
+      :style="{ outlineColor: contrastColor }"
       :contenteditable="isEditing"
       >{{ taskTitle }}
     </VCardText>
@@ -28,8 +28,8 @@ const props = defineProps<{
 }>()
 
 const tasksStore = useTasksStore()
-const textColor = fontColorContrast(props.bgColor)
-const taskTitle = ref<string>(props.task.title)
+const contrastColor: ComputedRef<string> = computed(() => fontColorContrast(props.bgColor))
+const taskTitle: Ref<string> = ref(props.task.title)
 </script>
 
 <style scoped>

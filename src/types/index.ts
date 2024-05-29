@@ -10,9 +10,15 @@ export interface ITaskUpdates {
 }
 
 export interface IStatusContainer {
+  id: number
   title: string
   color: string
   tasks: ITask[]
+}
+
+export interface IStatusContainerUpdates {
+  title?: string
+  color?: string
 }
 
 export interface ITasksStore {

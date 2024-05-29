@@ -1,20 +1,47 @@
 <template>
-  <VBtn
-    variant="tonal"
-    height="20"
-    width="20"
-    min-width="20"
-    class="pa-0"
-    :class="[isHovering ? 'opacity-100' : 'opacity-0']"
-  >
-    <VIcon icon="mdi-palette-outline" size="20" />
-  </VBtn>
+  <VSheet class="bg-transparent">
+    <VBtn
+      @click="showColorPicker = !showColorPicker"
+      variant="tonal"
+      height="24"
+      width="24"
+      min-width="24"
+      class="pa-0"
+      :class="[isHovering ? 'opacity-100' : 'opacity-0']"
+    >
+      <VIcon icon="mdi-palette-outline" size="24" />
+    </VBtn>
+    <VColorPicker
+      @update:modelValue="
+        (e: string) => tasksStore.updateStatusContainer(statusContainer.id, { color: e })
+      "
+      v-if="showColorPicker"
+      v-model="color"
+      class="position-fixed"
+    />
+  </VSheet>
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { useTasksStore } from '@/stores/tasksStore'
+import type { IStatusContainer } from '@/types'
+
+const props = defineProps<{
+  statusContainer: IStatusContainer
   isHovering: boolean | null
 }>()
 
-const emits = defineEmits(['toggleEditing'])
+const tasksStore = useTasksStore()
+const showColorPicker = ref<boolean>(false)
+const color = ref<string>(props.statusContainer.color)
 </script>
+
+<style scoped>
+.v-sheet {
+  min-height: 0 !important;
+}
+
+.v-color-picker {
+  z-index: 1;
+}
+</style>
