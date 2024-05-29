@@ -1,7 +1,7 @@
 <template>
-  <VSheet class="bg-transparent">
+  <VSheet class="bg-transparent" :style="{ zIndex: showColorPicker ? 3000 : 0 }">
     <VBtn
-      @click="showColorPicker = !showColorPicker"
+      @click="toggleColorPicker"
       variant="tonal"
       height="24"
       width="24"
@@ -28,11 +28,12 @@ import type { IStatusContainer } from '@/types'
 
 const props = defineProps<{
   statusContainer: IStatusContainer
+  showColorPicker: boolean
+  toggleColorPicker: (value?: boolean) => void
   isHovering: boolean | null
 }>()
 
 const tasksStore = useTasksStore()
-const showColorPicker: Ref<boolean> = ref(false)
 const color: Ref<string> = ref(props.statusContainer.color)
 </script>
 

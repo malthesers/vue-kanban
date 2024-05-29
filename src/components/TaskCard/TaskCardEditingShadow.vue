@@ -8,9 +8,3 @@ defineProps<{
   isEditing: boolean
 }>()
 </script>
-
-<style scoped>
-.v-sheet {
-  z-index: 2000;
-}
-</style>
