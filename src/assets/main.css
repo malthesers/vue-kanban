@@ -35,12 +35,14 @@
 /* ----- Editable content styling ----- */
 
 [contenteditable] {
-  outline: 0px dashed;
+  outline: 1px dashed;
+  outline-color: transparent !important;
   border-radius: 2px;
+  transition-duration: 200ms;
 }
 
 [contenteditable='true'] {
-  outline: 1px dashed;
+  outline-color: inherit !important;
 }
 
 /* ----- Scrollbar styling ----- */
