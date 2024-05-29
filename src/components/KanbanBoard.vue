@@ -8,8 +8,9 @@
           :containerIndex="index"
           :bgColor="container.color"
         />
-        <StatusContainerCreator /> </VRow
-    ></VContainer>
+        <!-- <StatusContainerCreator />  -->
+      </VRow></VContainer
+    >
   </VMain>
 </template>
 

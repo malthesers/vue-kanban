@@ -17,7 +17,7 @@ const dummyTasks: IStatusContainer[] = [
       },
       {
         id: 3,
-        title: 'Didgeridoo woohoo time to do what it do',
+        title: 'Do the didgeridoo with this and that',
         description: 'Complete doing the didgeridoo thing that is to be done.'
       }
     ]

@@ -10,9 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { useTasksStore } from '@/stores/tasksStore'
+// import { useTasksStore } from '@/stores/tasksStore'
 
-const tasksStore = useTasksStore()
+// const tasksStore = useTasksStore()
 </script>
 
 <style scoped>
