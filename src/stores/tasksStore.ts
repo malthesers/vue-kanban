@@ -11,17 +11,17 @@ export const useTasksStore = defineStore('tasksStore', () => {
   }
 
   function updateTask(taskId: number, updates: ITaskUpdates) {
-    statusContainers.value
-      .flatMap((container: IStatusContainer) => container.tasks)
-      .forEach((task: ITask) => {
+    statusContainers.value.forEach((container: IStatusContainer) => {
+      container.tasks.forEach((task: ITask) => {
         if (task.id === taskId) {
           Object.assign(task, updates)
         }
       })
+    })
   }
 
   function removeTask(taskId: number) {
-    statusContainers.value.forEach((container) => {
+    statusContainers.value.forEach((container: IStatusContainer) => {
       const taskToRemove = container.tasks.find((task: ITask) => task.id === taskId)
 
       if (taskToRemove) {
