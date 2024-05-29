@@ -20,6 +20,10 @@
 
 /* ----- Additional utility classes ----- */
 
+.w-fit {
+  width: fit-content;
+}
+
 .h-fit {
   height: fit-content;
 }

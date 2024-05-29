@@ -6,7 +6,7 @@
         tag="v-row"
         group="containers"
         item-key="title"
-        class="h-100 pa-4 ga-4 flex-nowrap flex-sm-row"
+        class="w-fit h-100 pa-4 ga-4 flex-nowrap flex-sm-row"
         :animation="200"
       >
         <template #item="{ element, index }">
