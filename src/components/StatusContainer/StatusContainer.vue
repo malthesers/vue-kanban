@@ -12,12 +12,11 @@
         <TaskCard :bgColor="bgColor" :task="element" />
       </template>
     </draggable>
-    <StatusContainerAddButton :containerIndex="containerIndex" />
+    <StatusContainerAddTaskButton :containerIndex="containerIndex" />
   </VCol>
 </template>
 
 <script setup lang="ts">
-import { useTasksStore } from '@/stores/tasksStore'
 import type { IStatusContainer } from '@/types'
 import draggable from 'vuedraggable'
 
@@ -26,8 +25,6 @@ defineProps<{
   containerIndex: number
   bgColor: string
 }>()
-
-const tasksStore = useTasksStore()
 </script>
 
 <style scoped>

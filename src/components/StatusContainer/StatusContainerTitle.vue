@@ -1,7 +1,15 @@
 <template>
-  <p :style="{ backgroundColor: bgColor, color: textColor }" class="px-4 py-2 font-weight-bold">
-    {{ title }}
-  </p>
+  <VHover>
+    <template v-slot:default="{ isHovering, props }">
+      <VSheet
+        v-bind="props"
+        :style="{ backgroundColor: bgColor, color: textColor }"
+        class="px-4 py-2 d-flex ga-1"
+      >
+        <VCardText class="pa-0 text-body-1 font-weight-bold">{{ title }}</VCardText>
+        <StatusContainerColourButton :isHovering="isHovering" /> </VSheet
+    ></template>
+  </VHover>
 </template>
 
 <script setup lang="ts">
@@ -14,3 +22,9 @@ const props = defineProps<{
 
 const textColor = fontColorContrast(props.bgColor)
 </script>
+
+<style scoped>
+.v-sheet {
+  min-height: 2.5rem;
+}
+</style>

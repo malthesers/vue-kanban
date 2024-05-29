@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { useTasksStore } from '@/stores/tasksStore'
 import { setActivePinia, createPinia } from 'pinia'
-import StatusContainerAddButton from '../StatusContainer/StatusContainerAddButton.vue'
+import StatusContainerAddButton from '../StatusContainer/StatusContainerAddTaskButton.vue'
 
 describe('StatusContainerAddButton', () => {
   let tasksStore
