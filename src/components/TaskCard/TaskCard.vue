@@ -38,7 +38,7 @@ defineProps<{
   task: ITask
 }>()
 
-const isEditing = ref<boolean>(false)
+const isEditing: Ref<boolean> = ref(false)
 
 function toggleEditing(value?: boolean) {
   isEditing.value = value !== undefined ? value : !isEditing.value

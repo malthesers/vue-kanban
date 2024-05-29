@@ -22,7 +22,7 @@ const props = defineProps<{
 }>()
 
 const tasksStore = useTasksStore()
-const taskDescription = ref<string>(props.task.description)
+const taskDescription: Ref<string> = ref(props.task.description)
 </script>
 
 <style scoped>

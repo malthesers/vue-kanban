@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 export const useTasksStore = defineStore('tasksStore', () => {
-  const statusContainers = ref<IStatusContainer[]>(defaultTasks)
+  const statusContainers: Ref<IStatusContainer[]> = ref(defaultTasks)
 
   function addTask(containerIndex: number, task: ITask) {
     statusContainers.value[containerIndex].tasks.push(task)

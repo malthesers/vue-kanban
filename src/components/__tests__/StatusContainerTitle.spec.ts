@@ -13,7 +13,17 @@ describe('StatusContainerTitle', () => {
   })
 
   it('renders with parameterised text', () => {
-    const wrapper = mount(StatusContainerTitle, { props: { title: 'To do', bgColor: '#9CE899' } })
+    const wrapper = mount(StatusContainerTitle, {
+      props: {
+        statusContainer: {
+          title: 'To do',
+          id: 0,
+          color: '',
+          tasks: []
+        },
+        bgColor: '#9CE899'
+      }
+    })
 
     expect(wrapper.text()).toContain('To do')
   })

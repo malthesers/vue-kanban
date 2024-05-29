@@ -32,8 +32,8 @@ const props = defineProps<{
 }>()
 
 const tasksStore = useTasksStore()
-const showColorPicker = ref<boolean>(false)
-const color = ref<string>(props.statusContainer.color)
+const showColorPicker: Ref<boolean> = ref(false)
+const color: Ref<string> = ref(props.statusContainer.color)
 </script>
 
 <style scoped>
