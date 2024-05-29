@@ -60,7 +60,6 @@ html,
 
 [data-draggable='true'] {
   cursor: grab !important;
-  transition-duration: 200ms;
 }
 
 .sortable-chosen,

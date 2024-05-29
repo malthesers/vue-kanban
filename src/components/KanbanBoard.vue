@@ -1,20 +1,29 @@
 <template>
   <VMain class="d-flex h-screen">
     <VContainer class="mt-4 max-w-none grow overflow-x-auto">
-      <VRow class="h-100 pa-4 ga-4 flex-nowrap flex-sm-row">
-        <StatusContainer
-          v-for="(container, index) in tasksStore.statusContainers"
-          :key="container.title"
-          :containerIndex="index"
-          :bgColor="container.color"
-        />
-        <!-- <StatusContainerCreator />  -->
-      </VRow></VContainer
-    >
+      <draggable
+        :list="tasksStore.statusContainers"
+        tag="v-row"
+        group="containers"
+        item-key="title"
+        class="h-100 pa-4 ga-4 flex-nowrap flex-sm-row"
+        :animation="200"
+      >
+        <template #item="{ element, index }">
+          <StatusContainer
+            :statusContainer="element"
+            :containerIndex="index"
+            :bgColor="element.color"
+          />
+        </template>
+      </draggable>
+      <!-- <StatusContainerCreator />  -->
+    </VContainer>
   </VMain>
 </template>
 
 <script setup lang="ts">
+import draggable from 'vuedraggable'
 import { useTasksStore } from '@/stores/tasksStore'
 
 const tasksStore = useTasksStore()
