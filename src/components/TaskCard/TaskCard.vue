@@ -1,5 +1,9 @@
 <template>
-  <VCard variant="elevated" class="rounded-lg mb-4 elevation-3">
+  <VCard
+    variant="elevated"
+    :style="{ zIndex: isEditing ? 3000 : 0 }"
+    class="rounded-lg mb-4 elevation-3"
+  >
     <VHover>
       <template v-slot:default="{ isHovering, props }">
         <VSheet v-bind="props">
@@ -21,6 +25,7 @@
         </VSheet>
       </template>
     </VHover>
+    <TaskCardEditingShadow @disableEditing="() => toggleEditing(false)" :isEditing="isEditing" />
   </VCard>
 </template>
 

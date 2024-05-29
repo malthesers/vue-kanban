@@ -2,7 +2,7 @@
   <VSheet :style="{ backgroundColor: bgColor, color: textColor }" class="pa-2 d-flex ga-1">
     <VCardText
       @dblclick="emits('enableEditing')"
-      @blur="(e) => updateTaskAndDisableEditing(task.id, { title: e.target.innerText })"
+      @blur="(e) => tasksStore.updateTask(task.id, { title: e.target.innerText })"
       class="pa-0 text-body-2 font-weight-bold"
       :style="{ outlineColor: textColor }"
       :contenteditable="isEditing"
@@ -30,11 +30,6 @@ const props = defineProps<{
 const tasksStore = useTasksStore()
 const textColor = fontColorContrast(props.bgColor)
 const taskTitle = ref<string>(props.task.title)
-
-function updateTaskAndDisableEditing(taskId: number, updatedTask: ITaskUpdates) {
-  tasksStore.updateTask(taskId, updatedTask)
-  emits('disableEditing')
-}
 </script>
 
 <style scoped>

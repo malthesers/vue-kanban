@@ -24,6 +24,10 @@
   height: fit-content;
 }
 
+.w-screen {
+  width: 100dvw;
+}
+
 .max-h-100 {
   max-height: 100%;
 }
@@ -38,7 +42,7 @@
   outline: 1px dashed;
   outline-color: transparent !important;
   border-radius: 2px;
-  transition-duration: 200ms;
+  transition-duration: 300ms;
 }
 
 [contenteditable='true'] {
