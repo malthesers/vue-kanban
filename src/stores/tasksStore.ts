@@ -1,10 +1,11 @@
+import getTasks from '@/api/getTasks'
 import defaultTasks from '@/data/defaultTasks'
 import type { IStatusContainer, IStatusContainerUpdates, ITask, ITaskUpdates } from '@/types'
 import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
 
 export const useTasksStore = defineStore('tasksStore', () => {
-  const statusContainers: Ref<IStatusContainer[]> = ref(defaultTasks)
+  const statusContainers: Ref<IStatusContainer[]> = ref([])
 
   function addTask(containerIndex: number, task: ITask) {
     statusContainers.value[containerIndex].tasks.push(task)
@@ -41,6 +42,11 @@ export const useTasksStore = defineStore('tasksStore', () => {
       }
     })
   }
+
+  onMounted(async () => {
+    const data = await getTasks()
+    statusContainers.value = data
+  })
 
   return {
     statusContainers,
