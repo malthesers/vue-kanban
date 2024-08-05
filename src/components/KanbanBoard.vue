@@ -24,7 +24,19 @@
 <script setup lang="ts">
 import draggable from 'vuedraggable'
 import { useTasksStore } from '@/stores/tasksStore'
+import { supabase } from '@/lib/supabaseClient'
 
 const tasksStore = useTasksStore()
+
+const countries = ref([])
+
+async function getTasks() {
+  const { data } = await supabase.from('containers').select()
+  console.log(data)
+}
+
+onMounted(() => {
+  getTasks()
+})
 </script>
 
