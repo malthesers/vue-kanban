@@ -27,3 +27,4 @@ import { useTasksStore } from '@/stores/tasksStore'
 
 const tasksStore = useTasksStore()
 </script>
+

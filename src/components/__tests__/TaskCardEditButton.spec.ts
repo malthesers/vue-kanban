@@ -7,7 +7,7 @@ import TaskCardEditButton from '../TaskCard/TaskCardEditButton.vue'
 describe('TaskCardEditButton', () => {
   let tasksStore
   const props = {
-    isHovering: false
+    isHovering: false,
   }
 
   beforeEach(() => {

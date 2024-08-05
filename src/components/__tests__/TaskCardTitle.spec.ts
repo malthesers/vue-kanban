@@ -12,9 +12,9 @@ describe('TaskCardTitle', () => {
     task: {
       id: 0,
       title: 'Implement thing',
-      description: 'Use the given technology to implement the thing'
+      description: 'Use the given technology to implement the thing',
     },
-    bgColor: '#9CE899'
+    bgColor: '#9CE899',
   }
 
   beforeEach(() => {

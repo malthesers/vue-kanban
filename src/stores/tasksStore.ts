@@ -48,6 +48,6 @@ export const useTasksStore = defineStore('tasksStore', () => {
     updateTask,
     removeTask,
     addStatusContainer,
-    updateStatusContainer
+    updateStatusContainer,
   }
 })

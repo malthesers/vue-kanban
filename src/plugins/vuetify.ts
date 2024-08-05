@@ -22,7 +22,7 @@ const customTheme: ThemeDefinition = {
     pastelYellow: '#FFECBE',
     pastelGreen: '#9CE899',
     pastelBlue: '#78C1E6',
-    pastelRed: '#F2B8B4'
+    pastelRed: '#F2B8B4',
   },
   variables: {
     'border-color': '#000000',
@@ -40,8 +40,8 @@ const customTheme: ThemeDefinition = {
     'theme-kbd': '#212529',
     'theme-on-kbd': '#FFFFFF',
     'theme-code': '#F5F5F5',
-    'theme-on-code': '#000000'
-  }
+    'theme-on-code': '#000000',
+  },
 }
 
 export default createVuetify({
@@ -49,15 +49,15 @@ export default createVuetify({
     defaultSet: 'mdi',
     aliases,
     sets: {
-      mdi
-    }
+      mdi,
+    },
   },
   theme: {
     defaultTheme: 'customTheme',
     themes: {
-      customTheme
-    }
+      customTheme,
+    },
   },
   components,
-  directives
+  directives,
 })

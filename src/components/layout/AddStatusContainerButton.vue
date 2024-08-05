@@ -5,7 +5,7 @@
         id: Date.now(),
         title: 'Title',
         color: '#381010',
-        tasks: []
+        tasks: [],
       })
     "
     variant="tonal"

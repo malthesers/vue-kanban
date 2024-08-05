@@ -8,7 +8,7 @@ describe('TaskCardDeleteButton', () => {
   let tasksStore
   const props = {
     isHovering: false,
-    taskId: 1
+    taskId: 1,
   }
 
   beforeEach(() => {

@@ -6,7 +6,7 @@
         :style="{
           zIndex: showColorPicker ? 3000 : 0,
           backgroundColor: bgColor,
-          color: contrastColor
+          color: contrastColor,
         }"
         class="px-4 py-2 d-flex ga-1"
       >

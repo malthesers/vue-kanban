@@ -6,7 +6,7 @@ import type { ITask, ITasksStore } from '@/types'
 const newTask: ITask = {
   id: 0,
   title: 'Implement thing',
-  description: 'Use the given technology to implement the thing'
+  description: 'Use the given technology to implement the thing',
 }
 
 describe('tasksStore', () => {
