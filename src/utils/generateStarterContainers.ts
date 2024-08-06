@@ -1,5 +1,6 @@
 import defaultContainers from '@/data/defaultContainers'
+import expandStarterContainer from './expandStarterContainer'
 
-export default function generateStarterContainers(id: string) {
-  return defaultContainers.map((container) => ({ ...container, userId: id, created_at: new Date().toISOString() }))
+export default function generateStarterContainers() {
+  return defaultContainers.map((container) => expandStarterContainer(container))
 }

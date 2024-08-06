@@ -1,7 +1,10 @@
 import defaultContainers from '@/data/defaultContainers'
-import type { IStatusContainer, IStatusContainerUpdates, ITask, ITaskUpdates } from '@/types'
+import type { IStatusContainer, IStatusContainerStarter, IStatusContainerSupabase, IStatusContainerUpdates, ITask, ITaskUpdates } from '@/types'
 import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
+import getTimestampISO from '@/utils/getTimestampISO'
+import expandStarterContainer from '@/utils/expandStarterContainer'
+import postNewContainer from '@/api/postNewContainer'
 
 export const useTasksStore = defineStore('tasksStore', () => {
   const statusContainers: Ref<IStatusContainer[]> = ref([])
@@ -30,8 +33,17 @@ export const useTasksStore = defineStore('tasksStore', () => {
     })
   }
 
-  function addStatusContainer(statusContainer: IStatusContainer) {
-    statusContainers.value.push(statusContainer)
+  function addStatusContainer(container: IStatusContainerStarter) {
+    const expandedContainer = expandStarterContainer(container)
+
+    if (expandedContainer) {
+      statusContainers.value.push({
+        ...expandedContainer,
+        tasks: [],
+      })
+
+      postNewContainer(expandedContainer)
+    }
   }
 
   function updateStatusContainer(statusContainerId: string, updates: IStatusContainerUpdates) {

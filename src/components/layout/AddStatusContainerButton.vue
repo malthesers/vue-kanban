@@ -2,10 +2,9 @@
   <VBtn
     @click="
       tasksStore.addStatusContainer({
-        id: Date.now(),
+        order: tasksStore.statusContainers.length,
         title: 'Title',
         color: '#381010',
-        tasks: [],
       })
     "
     variant="tonal"
@@ -16,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+6
 import { useTasksStore } from '@/stores/tasksStore'
 
 const tasksStore = useTasksStore()
