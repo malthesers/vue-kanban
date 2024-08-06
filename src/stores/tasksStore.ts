@@ -42,10 +42,10 @@ export const useTasksStore = defineStore('tasksStore', () => {
     })
   }
 
-  // onMounted(async () => {
-  //   const data = await getTasks()
-  //   statusContainers.value = data
-  // })
+  function initiateStatusContainers(containers: IStatusContainer[]) {
+    console.log(containers)
+    statusContainers.value = containers
+  }
 
   return {
     statusContainers,
@@ -54,5 +54,6 @@ export const useTasksStore = defineStore('tasksStore', () => {
     removeTask,
     addStatusContainer,
     updateStatusContainer,
+    initiateStatusContainers,
   }
 })

@@ -1,13 +1,18 @@
 import { supabase } from '@/lib/supabaseClient'
+import { useTasksStore } from '@/stores/tasksStore'
 
-export default async function getTasks() {
+export default async function getContainers() {
+  const { initiateStatusContainers } = useTasksStore()
   const { data, error } = await supabase.from('containers').select(`
     id,
+    userId,
     created_at,
     title,
     color,
+    order,
     tasks (
       id,
+      userId,
       created_at,
       title,
       description
@@ -19,6 +24,6 @@ export default async function getTasks() {
 
     return []
   } else {
-    return data
+    initiateStatusContainers(data)
   }
 }
