@@ -4,8 +4,17 @@ import { defineStore } from 'pinia'
 export const useAuthStore = defineStore('authStore', () => {
   const isLoggedIn = ref<boolean>(false)
 
+  async function signUp(email: string, password: string) {
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+    })
+
+    return error
+  }
+
   async function signIn(email: string, password: string) {
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     })
@@ -27,6 +36,7 @@ export const useAuthStore = defineStore('authStore', () => {
 
   return {
     isLoggedIn,
+    signUp,
     signIn,
     signOut,
   }
