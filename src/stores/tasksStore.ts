@@ -1,8 +1,6 @@
-import defaultContainers from '@/data/defaultContainers'
-import type { IStatusContainer, IStatusContainerStarter, IStatusContainerSupabase, IStatusContainerUpdates, ITask, ITaskUpdates } from '@/types'
+import type { IStatusContainer, IStatusContainerStarter, IStatusContainerUpdates, ITask, ITaskUpdates } from '@/types'
 import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
-import getTimestampISO from '@/utils/getTimestampISO'
 import expandStarterContainer from '@/utils/expandStarterContainer'
 import postNewContainer from '@/api/postNewContainer'
 
