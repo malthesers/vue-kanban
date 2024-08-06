@@ -35,4 +35,8 @@ export interface ITasksStore {
   addTask: (containerIndex: number, task: ITask) => void
   updateTask: (taskId: number, updates: ITaskUpdates) => void
   removeTask: (taskId: number) => void
+  addStatusContainer: (container: IStatusContainerStarter) => void
+  updateStatusContainer: (statusContainerId: string, updates: IStatusContainerUpdates) => void
+  updateStatusContainerOrder: () => void
+  initiateStatusContainers: (containers: IStatusContainer[]) => void
 }
