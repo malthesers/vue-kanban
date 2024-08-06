@@ -43,7 +43,6 @@ export const useTasksStore = defineStore('tasksStore', () => {
   }
 
   function initiateStatusContainers(containers: IStatusContainer[]) {
-    console.log(containers)
     statusContainers.value = containers
   }
 

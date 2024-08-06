@@ -38,7 +38,7 @@ export const useAuthStore = defineStore('authStore', () => {
       user.value = null
     } else {
       user.value = session.user
-      getContainers()
+      getContainers(user.value.id)
     }
   })
 
