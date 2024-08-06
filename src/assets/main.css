@@ -1,8 +1,7 @@
 /* ----- Google Font classes ----- */
 
-.text-body-1 {
-  font-family: 'Oxygen', sans-serif !important;
-}
+.v-app-bar-title,
+.text-body-1,
 .text-body-2 {
   font-family: 'Oxygen', sans-serif !important;
 }

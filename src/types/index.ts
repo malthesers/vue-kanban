@@ -9,10 +9,19 @@ export interface ITaskUpdates {
   description?: string
 }
 
-export interface IStatusContainer {
-  id: number
+export interface IStatusContainerStarter {
+  order: number
   title: string
   color: string
+}
+
+export interface IStatusContainerSupabase extends IStatusContainerStarter {
+  id: string
+  userId: string
+  created_at: string
+}
+
+export interface IStatusContainer extends IStatusContainerSupabase {
   tasks: ITask[]
 }
 

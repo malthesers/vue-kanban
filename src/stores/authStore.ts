@@ -1,3 +1,4 @@
+import postStarterContainers from '@/api/postStarterContainers'
 import { supabase } from '@/lib/supabaseClient'
 import type { User } from '@supabase/supabase-js'
 import { defineStore } from 'pinia'
@@ -6,19 +7,27 @@ export const useAuthStore = defineStore('authStore', () => {
   const user = ref<User | null>(null)
 
   async function signUp(email: string, password: string) {
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
     })
+
+    if (data.user) {
+      postStarterContainers(data.user.id)
+    }
 
     return error
   }
 
   async function signIn(email: string, password: string) {
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     })
+
+    if (data.user) {
+      postStarterContainers(data.user.id)
+    }
 
     return error
   }

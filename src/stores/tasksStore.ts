@@ -1,5 +1,4 @@
-import getTasks from '@/api/getTasks'
-import defaultTasks from '@/data/defaultTasks'
+import defaultContainers from '@/data/defaultContainers'
 import type { IStatusContainer, IStatusContainerUpdates, ITask, ITaskUpdates } from '@/types'
 import { defineStore } from 'pinia'
 import { ref, type Ref } from 'vue'
@@ -35,7 +34,7 @@ export const useTasksStore = defineStore('tasksStore', () => {
     statusContainers.value.push(statusContainer)
   }
 
-  function updateStatusContainer(statusContainerId: number, updates: IStatusContainerUpdates) {
+  function updateStatusContainer(statusContainerId: string, updates: IStatusContainerUpdates) {
     statusContainers.value.forEach((container: IStatusContainer) => {
       if (container.id === statusContainerId) {
         Object.assign(container, updates)
@@ -43,10 +42,10 @@ export const useTasksStore = defineStore('tasksStore', () => {
     })
   }
 
-  onMounted(async () => {
-    const data = await getTasks()
-    statusContainers.value = data
-  })
+  // onMounted(async () => {
+  //   const data = await getTasks()
+  //   statusContainers.value = data
+  // })
 
   return {
     statusContainers,
