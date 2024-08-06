@@ -1,8 +1,8 @@
 <template>
   <VLayout>
     <AppHeader />
-    <AuthenticationPanel v-if="!authStore.isLoggedIn" />
-    <KanbanBoard v-if="authStore.isLoggedIn" />
+    <AuthenticationPanel v-if="!authStore.user" />
+    <KanbanBoard v-if="authStore.user" />
   </VLayout>
 </template>
 

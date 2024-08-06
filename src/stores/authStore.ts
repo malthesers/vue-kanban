@@ -1,8 +1,9 @@
 import { supabase } from '@/lib/supabaseClient'
+import type { User } from '@supabase/supabase-js'
 import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('authStore', () => {
-  const isLoggedIn = ref<boolean>(false)
+  const user = ref<User | null>(null)
 
   async function signUp(email: string, password: string) {
     const { error } = await supabase.auth.signUp({
@@ -28,14 +29,14 @@ export const useAuthStore = defineStore('authStore', () => {
 
   supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_OUT' || session === null) {
-      isLoggedIn.value = false
+      user.value = null
     } else {
-      isLoggedIn.value = true
+      user.value = session.user
     }
   })
 
   return {
-    isLoggedIn,
+    user,
     signUp,
     signIn,
     signOut,
