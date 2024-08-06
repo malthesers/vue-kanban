@@ -10,18 +10,20 @@ export const useAuthStore = defineStore('authStore', () => {
       password,
     })
 
-    if (data) {
-      isLoggedIn.value = true
-    }
+    return error
   }
 
   async function signOut() {
     const { error } = await supabase.auth.signOut()
-
-    if (!error) {
-      isLoggedIn.value = false
-    }
   }
+
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_OUT' || session === null) {
+      isLoggedIn.value = false
+    } else {
+      isLoggedIn.value = true
+    }
+  })
 
   return {
     isLoggedIn,
