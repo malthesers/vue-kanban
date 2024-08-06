@@ -14,21 +14,21 @@ export default defineConfig({
     AutoImport({
       imports: ['vue'],
       dts: './auto-imports.d.ts',
-      vueTemplate: true
-    })
+      vueTemplate: true,
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
   test: {
     globals: true,
     environment: 'jsdom',
     server: {
       deps: {
-        inline: ['vuetify']
-      }
-    }
-  }
+        inline: ['vuetify'],
+      },
+    },
+  },
 })

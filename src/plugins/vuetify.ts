@@ -9,7 +9,7 @@ const customTheme: ThemeDefinition = {
   dark: false,
   colors: {
     background: '#FFF9F3',
-    surface: '#FFF9F3',
+    surface: '#e8e0d8',
     'surface-bright': '#FFF9F3',
     'surface-light': '#EEEEEE',
     'surface-variant': '#424242',
