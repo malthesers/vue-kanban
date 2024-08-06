@@ -42,6 +42,12 @@ export const useTasksStore = defineStore('tasksStore', () => {
     })
   }
 
+  function updateStatusContainerOrder() {
+    statusContainers.value.forEach((container: IStatusContainer) => {
+      container.order = statusContainers.value.findIndex((statusContainer) => statusContainer.id === container.id)
+    })
+  }
+
   function initiateStatusContainers(containers: IStatusContainer[]) {
     statusContainers.value = containers
   }
@@ -53,6 +59,7 @@ export const useTasksStore = defineStore('tasksStore', () => {
     removeTask,
     addStatusContainer,
     updateStatusContainer,
+    updateStatusContainerOrder,
     initiateStatusContainers,
   }
 })

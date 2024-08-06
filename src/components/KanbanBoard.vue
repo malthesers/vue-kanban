@@ -8,13 +8,10 @@
         item-key="title"
         class="w-fit h-100 pa-4 ga-4 flex-nowrap flex-sm-row"
         :animation="200"
+        @end="tasksStore.updateStatusContainerOrder()"
       >
         <template #item="{ element, index }">
-          <StatusContainer
-            :statusContainer="element"
-            :containerIndex="index"
-            :bgColor="element.color"
-          />
+          <StatusContainer :statusContainer="element" :containerIndex="index" :bgColor="element.color" />
         </template>
       </draggable>
     </VContainer>
@@ -27,4 +24,3 @@ import { useTasksStore } from '@/stores/tasksStore'
 
 const tasksStore = useTasksStore()
 </script>
-
